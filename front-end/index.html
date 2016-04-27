@@ -14,17 +14,27 @@
         <body ng-controller="searchController">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <form class="search-form form-inline" ng-submit="search()">
-                                <input type="text" class="form-control" ng-model="form.value">
+                                <input type="text" class="form-control" ng-model="who">
                                 <input type="submit" class="btn btn-primary">
                             </form>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        Client Side: {{form.value}}<br><br>
-                        Server Side Response: {{result}}
+                        {{result}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div ng-repeat="x in studentsOnLoad">
+                            <div style="text-align: center">
+                                <ul>
+                                    <li style="padding: 3px; background-color: lightgray; list-style:none">{{x.name}}</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
