@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang='en' ng-app="searchApp">
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-    <title>Test App</title>
+        <title>Test App</title>
 
+    </head>
+    <body>
 
+        <body ng-controller="searchController">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <form class="search-form form-inline" ng-submit="search()">
+                                <input type="text" class="form-control" ng-model="form.value">
+                                <input type="submit" class="btn btn-primary">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        Client Side: {{form.value}}<br><br>
+                        Server Side Response: {{result}}
+                    </div>
+                </div>
+            </div>
 
-  </head>
-  <body>
-
-    <body ng-controller="searchController">
-      <div class="row">
-        <div class="form-group">
-          <form class="search-form form-inline" ng-submit="search()">
-            <input type="text" class="form-control">
-            <input type="submit" class="btn btn-primary">
-          </form>
-        </div>
-      </div>
-
-      {{message}}
-
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
-    <script type="text/javascript" src="controller.js"></script>
-  </body>
-</html>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+            <script type="text/javascript" src="controller.js"></script>
+        </body>
+    </html>
